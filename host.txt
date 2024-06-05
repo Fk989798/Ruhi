@@ -1,16 +1,378 @@
-def hosting_code():
-    # Initialize variables
-    website = "https://www.hostinger.in/satish5738/satish-convo.html"
-    server = "nginx"
+Salesforce Developers/Heroku
 
-    # Set up hosting environment
-    hosting_provider = "Amazon Web Services"
-    server_type = "EC2 instance"
+Skip NavigationShow nav
 
-    # Deploy website
-    if server == "nginx":
-        print("Deploying convo-server using Nginx server...")
-    else:
-        print("Deploying convo-server using Apache server...")
+Get StartedDocumentationChangelogSearch
 
-    print(f"Your server {server} is now hosted on {hosting-satish}'s {server_type}.")   
+VIEW CATEGORIES
+
+Command LineHeroku CLI Commands
+
+Heroku CLI CommandsEnglish — 日本語に切り替える
+
+Last updated June 14, 2023
+
+heroku access
+
+list who has access to an app
+
+list who has access to an app USAGE $ heroku access OPTIONS -a, --app=app (required) app to run command against -r, --remote=remote git remote of app to use --json output in json format heroku access:add EMAIL
+
+add new users to your app
+
+add new users to your app USAGE $ heroku access:add EMAIL OPTIONS -a, --app=app (required) app to run command against -p, --permissions=permissions list of permissions comma separated -r, --remote=remote git remote of app to use EXAMPLES $ heroku access:add user@email.com --app APP # add a collaborator to your app $ heroku access:add user@email.com --app APP --permissions deploy,manage,operate # permissions must be comma separated heroku access:remove EMAIL
+
+remove users from a team app
+
+remove users from a team app USAGE $ heroku access:remove EMAIL OPTIONS -a, --app=app (required) app to run command against -r, --remote=remote git remote of app to use EXAMPLES $ heroku access:remove user@email.com --app APP heroku access:update EMAIL
+
+update existing collaborators on an team app
+
+update existing collaborators on an team app USAGE $ heroku access:update EMAIL OPTIONS -a, --app=app (required) app to run command against -p, --permissions=permissions comma-delimited list of permissions to update (deploy,manage,operate) -r, --remote=remote git remote of app to use EXAMPLES $ heroku access:update user@email.com --app APP --permissions deploy,manage,operate heroku addons [--all|--app APP]
+
+lists your add-ons and attachments
+
+lists your add-ons and attachments The default filter applied depends on whether you are in a Heroku app directory. If so, the --app flag is implied. If not, the default of --all is implied. Explicitly providing either flag overrides the default behavior. USAGE $ heroku addons [--all|--app APP] OPTIONS -A, --all show add-ons and attachments for all accessible apps -a, --app=app app to run command against -r, --remote=remote git remote of app to use --json return add-ons in json format DESCRIPTION The default filter applied depends on whether you are in a Heroku app directory. If so, the --app flag is implied. If not, the default of --all is implied. Explicitly providing either flag overrides the default behavior. EXAMPLES $ heroku addons --all $ heroku addons --app acme-inc-www heroku addons:attach ADDON_NAME
+
+attach an existing add-on resource to an app
+
+attach an existing add-on resource to an app USAGE $ heroku addons:attach ADDON_NAME OPTIONS -a, --app=app (required) app to run command against -r, --remote=remote git remote of app to use --as=as name for add-on attachment --confirm=confirm overwrite existing add-on attachment with same name --credential=credential credential name for scoped access to Heroku Postgres heroku addons:create SERVICE:PLAN
+
+create a new add-on resource
+
+create a new add-on resource USAGE $ heroku addons:create SERVICE:PLAN OPTIONS -a, --app=app (required) app to run command against -r, --remote=remote git remote of app to use --as=as name for the initial add-on attachment --confirm=confirm overwrite existing config vars or existing add-on attachments --name=name name for the add-on resource --wait watch add-on creation status and exit when complete heroku addons:destroy [ADDON]... [flags]
+
+permanently destroy an add-on resource
+
+permanently destroy an add-on resource USAGE $ heroku addons:destroy [ADDON]... [flags] OPTIONS -a, --app=app app to run command against -c, --confirm=confirm -f, --force allow destruction even if connected to other apps -r, --remote=remote git remote of app to use heroku addons:detach ATTACHMENT_NAME
+
+detach an existing add-on resource from an app
+
+detach an existing add-on resource from an app USAGE $ heroku addons:detach ATTACHMENT_NAME OPTIONS -a, --app=app (required) app to run command against -r, --remote=remote git remote of app to use heroku addons:docs ADDON
+
+open an add-on’s Dev Center documentation in your browser
+
+open an add-on's Dev Center documentation in your browser USAGE $ heroku addons:docs ADDON OPTIONS -a, --app=app app to run command against -r, --remote=remote git remote of app to use --show-url show URL, do not open browser heroku addons:downgrade ADDON [PLAN]
+
+change add-on plan
+
+change add-on plan See available plans with `heroku addons:plans SERVICE`. Note that `heroku addons:upgrade` and `heroku addons:downgrade` are the same. Either one can be used to change an add-on plan up or down. https://devcenter.heroku.com/articles/managing-add-ons USAGE $ heroku addons:downgrade ADDON [PLAN] OPTIONS -a, --app=app app to run command against -r, --remote=remote git remote of app to use DESCRIPTION See available plans with `heroku addons:plans SERVICE`. Note that `heroku addons:upgrade` and `heroku addons:downgrade` are the same. Either one can be used to change an add-on plan up or down. https://devcenter.heroku.com/articles/managing-add-ons EXAMPLE Upgrade an add-on by service name: $ heroku addons:upgrade heroku-redis:premium-2 Upgrade a specific add-on: $ heroku addons:upgrade swimming-briskly-123 heroku-redis:premium-2 heroku addons:info ADDON
+
+show detailed add-on resource and attachment information
+
+show detailed add-on resource and attachment information USAGE $ heroku addons:info ADDON OPTIONS -a, --app=app app to run command against -r, --remote=remote git remote of app to use heroku addons:open ADDON
+
+open an add-on’s dashboard in your browser
+
+open an add-on's dashboard in your browser USAGE $ heroku addons:open ADDON OPTIONS -a, --app=app app to run command against -r, --remote=remote git remote of app to use --show-url show URL, do not open browser heroku addons:plans SERVICE
+
+list all available plans for an add-on services
+
+list all available plans for an add-on services USAGE $ heroku addons:plans SERVICE OPTIONS --json output in json format heroku addons:rename ADDON NEW_NAME
+
+rename an add-on
+
+rename an add-on USAGE $ heroku addons:rename ADDON NEW_NAME OPTIONS -a, --app=app app to run command against -r, --remote=remote git remote of app to use heroku addons:services
+
+list all available add-on services
+
+list all available add-on services USAGE $ heroku addons:services OPTIONS --json output in json format heroku addons:upgrade ADDON [PLAN]
+
+change add-on plan
+
+change add-on plan See available plans with `heroku addons:plans SERVICE`. Note that `heroku addons:upgrade` and `heroku addons:downgrade` are the same. Either one can be used to change an add-on plan up or down. https://devcenter.heroku.com/articles/managing-add-ons USAGE $ heroku addons:upgrade ADDON [PLAN] OPTIONS -a, --app=app app to run command against -r, --remote=remote git remote of app to use DESCRIPTION See available plans with `heroku addons:plans SERVICE`. Note that `heroku addons:upgrade` and `heroku addons:downgrade` are the same. Either one can be used to change an add-on plan up or down. https://devcenter.heroku.com/articles/managing-add-ons EXAMPLE Upgrade an add-on by service name: $ heroku addons:upgrade heroku-redis:premium-2 Upgrade a specific add-on: $ heroku addons:upgrade swimming-briskly-123 heroku-redis:premium-2 heroku addons:wait ADDON
+
+show provisioning status of the add-ons on the app
+
+show provisioning status of the add-ons on the app USAGE $ heroku addons:wait ADDON OPTIONS -a, --app=app app to run command against -r, --remote=remote git remote of app to use --wait-interval=wait-interval how frequently to poll in seconds heroku apps
+
+list your apps
+
+list your apps USAGE $ heroku apps OPTIONS -A, --all include apps in all teams -p, --personal list apps in personal account when a default team is set -s, --space=space filter by space -t, --team=team team to use --json output in json format EXAMPLES $ heroku apps === My Apps example example2 === Collaborated Apps theirapp other@owner.name heroku apps:create [APP]
+
+creates a new app
+
+creates a new app USAGE $ heroku apps:create [APP] ARGUMENTS APP name of app to create OPTIONS -b, --buildpack=buildpack buildpack url to use for this app -n, --no-remote do not create a git remote -r, --remote=remote the git remote to create, default "heroku" -s, --stack=stack the stack to create the app on -t, --team=team team to use --addons=addons comma-delimited list of addons to install --json output in json format --region=region specify region for the app to run in --space=space the private space to create the app in EXAMPLES $ heroku apps:create Creating app... done, stack is heroku-22 https://floating-dragon-42.heroku.com/ | https://git.heroku.com/floating-dragon-42.git # or just $ heroku create # use a heroku.yml manifest file $ heroku apps:create --manifest # specify a buildpack $ heroku apps:create --buildpack https://github.com/some/buildpack.git # specify a name $ heroku apps:create example # create a staging app $ heroku apps:create example-staging --remote staging # create an app in the eu region $ heroku apps:create --region eu heroku apps:destroy
+
+permanently destroy an app
+
+permanently destroy an app This will also destroy all add-ons on the app. USAGE $ heroku apps:destroy OPTIONS -a, --app=app app to run command against -c, --confirm=confirm -r, --remote=remote git remote of app to use DESCRIPTION This will also destroy all add-ons on the app. heroku apps:errors
+
+view app errors
+
+view app errors USAGE $ heroku apps:errors OPTIONS -a, --app=app (required) app to run command against -r, --remote=remote git remote of app to use --dyno show only dyno errors --hours=hours number of hours to look back (default 24) --json output in json format --router show only router errors heroku apps:favorites
+
+list favorited apps
+
+list favorited apps USAGE $ heroku apps:favorites OPTIONS --json output in json format heroku apps:favorites:add
+
+favorites an app
+
+favorites an app USAGE $ heroku apps:favorites:add OPTIONS -a, --app=app (required) app to run command against -r, --remote=remote git remote of app to use heroku apps:favorites:remove
+
+unfavorites an app
+
+unfavorites an app USAGE $ heroku apps:favorites:remove OPTIONS -a, --app=app (required) app to run command against -r, --remote=remote git remote of app to use heroku apps:info
+
+show detailed app information
+
+show detailed app information $ heroku apps:info === example Git URL: https://git.heroku.com/example.git Repo Size: 5M ... $ heroku apps:info --shell git_url=https://git.heroku.com/example.git repo_size=5000000 ... USAGE $ heroku apps:info OPTIONS -a, --app=app app to run command against -j, --json -r, --remote=remote git remote of app to use -s, --shell output more shell friendly key/value pairs DESCRIPTION $ heroku apps:info === example Git URL: https://git.heroku.com/example.git Repo Size: 5M ... $ heroku apps:info --shell git_url=https://git.heroku.com/example.git repo_size=5000000 ... heroku apps:join
+
+add yourself to a team app
+
+add yourself to a team app USAGE $ heroku apps:join OPTIONS -a, --app=app (required) app to run command against -r, --remote=remote git remote of app to use heroku apps:leave
+
+remove yourself from a team app
+
+remove yourself from a team app USAGE $ heroku apps:leave OPTIONS -a, --app=app (required) app to run command against -r, --remote=remote git remote of app to use heroku apps:lock
+
+prevent team members from joining an app
+
+prevent team members from joining an app USAGE $ heroku apps:lock OPTIONS -a, --app=app (required) app to run command against -r, --remote=remote git remote of app to use heroku apps:open [PATH]
+
+open the app in a web browser
+
+open the app in a web browser USAGE $ heroku apps:open [PATH] OPTIONS -a, --app=app (required) app to run command against -r, --remote=remote git remote of app to use EXAMPLES $ heroku open -a myapp # opens https://myapp-xxxxxxxxxxxx.herokuapp.com $ heroku open -a myapp /foo # opens https://myapp-xxxxxxxxxxxx.herokuapp.com/foo heroku apps:rename NEWNAME
+
+rename an app
+
+rename an app This will locally update the git remote if it is set to the old app. USAGE $ heroku apps:rename NEWNAME OPTIONS -a, --app=app (required) app to run command against -r, --remote=remote git remote of app to use DESCRIPTION This will locally update the git remote if it is set to the old app. EXAMPLES $ heroku apps:rename --app oldname newname https://newname-xxxxxxxxxxxx.herokuapp.com/ | https://git.heroku.com/newname.git Git remote heroku updated heroku apps:stacks
+
+show the list of available stacks
+
+show the list of available stacks USAGE $ heroku apps:stacks OPTIONS -a, --app=app (required) app to run command against -r, --remote=remote git remote of app to use heroku apps:stacks:set STACK
+
+set the stack of an app
+
+set the stack of an app USAGE $ heroku apps:stacks:set STACK OPTIONS -a, --app=app (required) app to run command against -r, --remote=remote git remote of app to use EXAMPLES $ heroku stack:set heroku-22 -a myapp Setting stack to heroku-22... done You will need to redeploy myapp for the change to take effect. Run git push heroku main to trigger a new build on myapp. heroku apps:transfer RECIPIENT
+
+transfer applications to another user or team
+
+transfer applications to another user or team USAGE $ heroku apps:transfer RECIPIENT ARGUMENTS RECIPIENT user or team to transfer applications to OPTIONS -a, --app=app app to run command against -l, --locked lock the app upon transfer -r, --remote=remote git remote of app to use --bulk transfer applications in bulk EXAMPLES $ heroku apps:transfer collaborator@example.com Transferring example to collaborator@example.com... done $ heroku apps:transfer acme-widgets Transferring example to acme-widgets... done $ heroku apps:transfer --bulk acme-widgets ... heroku apps:unlock
+
+unlock an app so any team member can join
+
+unlock an app so any team member can join USAGE $ heroku apps:unlock OPTIONS -a, --app=app (required) app to run command against -r, --remote=remote git remote of app to use heroku auth:2fa
+
+check 2fa status
+
+check 2fa status USAGE $ heroku auth:2fa ALIASES $ heroku 2fa $ heroku twofactor 
+
+See code: @heroku-cli/plugin-auth
+
+heroku auth:2fa:disable
+
+disables 2fa on account
+
+disables 2fa on account USAGE $ heroku auth:2fa:disable ALIASES $ heroku twofactor:disable $ heroku 2fa:disable EXAMPLES $ heroku auth:2fa:disable 
+
+See code: @heroku-cli/plugin-auth
+
+heroku auth:login
+
+login with your Heroku credentials
+
+login with your Heroku credentials USAGE $ heroku auth:login OPTIONS -e, --expires-in=expires-in duration of token in seconds (default 30 days) -i, --interactive login with username/password --browser=browser browser to open SSO with (example: "firefox", "safari") ALIASES $ heroku login 
+
+See code: @heroku-cli/plugin-auth
+
+heroku auth:logout
+
+clears local login credentials and invalidates API session
+
+clears local login credentials and invalidates API session USAGE $ heroku auth:logout ALIASES $ heroku logout 
+
+See code: @heroku-cli/plugin-auth
+
+heroku auth:token
+
+outputs current CLI authentication token.
+
+outputs current CLI authentication token. By default, the CLI auth token is only valid for 1 year. To generate a long-lived token, use heroku authorizations:create USAGE $ heroku auth:token OPTIONS -h, --help show CLI help DESCRIPTION By default, the CLI auth token is only valid for 1 year. To generate a long-lived token, use heroku authorizations:create 
+
+See code: @heroku-cli/plugin-auth
+
+heroku auth:whoami
+
+display the current logged in user
+
+display the current logged in user USAGE $ heroku auth:whoami ALIASES $ heroku whoami 
+
+See code: @heroku-cli/plugin-auth
+
+heroku authorizations
+
+list OAuth authorizations
+
+list OAuth authorizations USAGE $ heroku authorizations OPTIONS -j, --json output in json format 
+
+See code: @heroku-cli/plugin-oauth-v5
+
+heroku authorizations:create
+
+create a new OAuth authorization
+
+create a new OAuth authorization This creates an authorization with access to your Heroku account. USAGE $ heroku authorizations:create OPTIONS -S, --short only output token -d, --description=description set a custom authorization description -e, --expires-in=expires-in set expiration in seconds (default no expiration) -j, --json output in json format -s, --scope=scope set custom OAuth scopes DESCRIPTION This creates an authorization with access to your Heroku account. 
+
+See code: @heroku-cli/plugin-oauth-v5
+
+heroku authorizations:info ID
+
+show an existing OAuth authorization
+
+show an existing OAuth authorization USAGE $ heroku authorizations:info ID OPTIONS -j, --json output in json format 
+
+See code: @heroku-cli/plugin-oauth-v5
+
+heroku authorizations:revoke ID
+
+revoke OAuth authorization
+
+revoke OAuth authorization USAGE $ heroku authorizations:revoke ID ALIASES $ heroku authorizations:destroy 
+
+See code: @heroku-cli/plugin-oauth-v5
+
+heroku authorizations:rotate ID
+
+updates an OAuth authorization token
+
+updates an OAuth authorization token USAGE $ heroku authorizations:rotate ID 
+
+See code: @heroku-cli/plugin-oauth-v5
+
+heroku authorizations:update ID
+
+updates an OAuth authorization
+
+updates an OAuth authorization USAGE $ heroku authorizations:update ID OPTIONS -d, --description=description set a custom authorization description --client-id=client-id identifier of OAuth client to set --client-secret=client-secret secret of OAuth client to set 
+
+See code: @heroku-cli/plugin-oauth-v5
+
+heroku autocomplete [SHELL]
+
+display autocomplete installation instructions
+
+display autocomplete installation instructions USAGE $ heroku autocomplete [SHELL] ARGUMENTS SHELL shell type OPTIONS -r, --refresh-cache refresh cache only (ignores displaying instructions) EXAMPLES $ heroku autocomplete $ heroku autocomplete bash $ heroku autocomplete zsh $ heroku autocomplete --refresh-cache 
+
+See code: @heroku-cli/plugin-autocomplete
+
+heroku buildpacks
+
+display the buildpacks for an app
+
+display the buildpacks for an app USAGE $ heroku buildpacks OPTIONS -a, --app=app (required) app to run command against -r, --remote=remote git remote of app to use 
+
+See code: @heroku-cli/plugin-buildpacks
+
+heroku buildpacks:add BUILDPACK
+
+add new app buildpack, inserting into list of buildpacks if necessary
+
+add new app buildpack, inserting into list of buildpacks if necessary USAGE $ heroku buildpacks:add BUILDPACK ARGUMENTS BUILDPACK namespace/name of the buildpack OPTIONS -a, --app=app (required) app to run command against -i, --index=index the 1-based index of the URL in the list of URLs -r, --remote=remote git remote of app to use 
+
+See code: @heroku-cli/plugin-buildpacks
+
+heroku buildpacks:clear
+
+clear all buildpacks set on the app
+
+clear all buildpacks set on the app USAGE $ heroku buildpacks:clear OPTIONS -a, --app=app (required) app to run command against -r, --remote=remote git remote of app to use 
+
+See code: @heroku-cli/plugin-buildpacks
+
+heroku buildpacks:info BUILDPACK
+
+fetch info about a buildpack
+
+fetch info about a buildpack USAGE $ heroku buildpacks:info BUILDPACK ARGUMENTS BUILDPACK namespace/name of the buildpack 
+
+See code: @heroku-cli/plugin-buildpacks
+
+heroku buildpacks:remove [BUILDPACK]
+
+remove a buildpack set on the app
+
+remove a buildpack set on the app USAGE $ heroku buildpacks:remove [BUILDPACK] ARGUMENTS BUILDPACK namespace/name of the buildpack OPTIONS -a, --app=app (required) app to run command against -i, --index=index the 1-based index of the URL to remove from the list of URLs -r, --remote=remote git remote of app to use 
+
+See code: @heroku-cli/plugin-buildpacks
+
+heroku buildpacks:search [TERM]
+
+search for buildpacks
+
+search for buildpacks USAGE $ heroku buildpacks:search [TERM] ARGUMENTS TERM search term that searches across name, namespace, and description OPTIONS --description=description buildpack description to filter on --name=name buildpack names to filter on using a comma separated list --namespace=namespace buildpack namespaces to filter on using a comma separated list 
+
+See code: @heroku-cli/plugin-buildpacks
+
+heroku buildpacks:set BUILDPACKundefined USAGE $ heroku buildpacks:set BUILDPACK ARGUMENTS BUILDPACK namespace/name of the buildpack OPTIONS -a, --app=app (required) app to run command against -i, --index=index the 1-based index of the URL in the list of URLs -r, --remote=remote git remote of app to use 
+
+See code: @heroku-cli/plugin-buildpacks
+
+heroku buildpacks:versions BUILDPACK
+
+list versions of a buildpack
+
+list versions of a buildpack USAGE $ heroku buildpacks:versions BUILDPACK ARGUMENTS BUILDPACK namespace/name of the buildpack 
+
+See code: @heroku-cli/plugin-buildpacks
+
+heroku certs
+
+list SSL certificates for an app
+
+list SSL certificates for an app USAGE $ heroku certs OPTIONS -a, --app=app (required) app to run command against -r, --remote=remote git remote of app to use 
+
+See code: @heroku-cli/plugin-certs-v5
+
+heroku certs:add CRT KEY
+
+add an SSL certificate to an app
+
+add an SSL certificate to an app Note: certificates with PEM encoding are also valid USAGE $ heroku certs:add CRT KEY OPTIONS -a, --app=app (required) app to run command against -r, --remote=remote git remote of app to use --bypass bypass the trust chain completion step DESCRIPTION Note: certificates with PEM encoding are also valid EXAMPLES $ heroku certs:add example.com.crt example.com.key If you require intermediate certificates, refer to this article on merging certificates to get a complete chain: https://help.salesforce.com/s/articleView?id=000333504&type=1 
+
+See code: @heroku-cli/plugin-certs-v5
+
+heroku certs:auto
+
+show ACM status for an app
+
+show ACM status for an app USAGE $ heroku certs:auto OPTIONS -a, --app=app (required) app to run command against -r, --remote=remote git remote of app to use --wait watch ACM status and display the status when complete 
+
+See code: @heroku-cli/plugin-certs-v5
+
+heroku certs:auto:disable
+
+disable ACM for an app
+
+disable ACM for an app USAGE $ heroku certs:auto:disable OPTIONS -a, --app=app (required) app to run command against -r, --remote=remote git remote of app to use 
+
+See code: @heroku-cli/plugin-certs-v5
+
+heroku certs:auto:enable
+
+enable ACM status for an app
+
+enable ACM status for an app USAGE $ heroku certs:auto:enable OPTIONS -a, --app=app (required) app to run command against -r, --remote=remote git remote of app to use --wait watch ACM status and exit when complete 
+
+See code: @heroku-cli/plugin-certs-v5
+
+heroku certs:auto:refresh
+
+refresh ACM for an app
+
+refresh ACM for an app USAGE $ heroku certs:auto:refresh OPTIONS -a, --app=app (required) app to run command against -r, --remote=remote git remote of app to use 
+
+See code: @heroku-cli/plugin-certs-v5
+
+heroku certs:chain
+
+print an ordered & complete chain for a certificate
+
+print an ordered & complete chain for a certificate USAGE $ heroku certs:chain OPTIONS -a, --app=app (required) app to run command against -r, --remote=remote git remote of app to use 
+
+See code: @heroku-cli/plugin-certs-v5
+
+heroku certs:generate DOMAIN
+
+generate a key and a CSR or self-signed certificate
+
